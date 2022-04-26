@@ -17,7 +17,7 @@ public class ApiGetMessageServlet extends HttpServlet {
 
       PrintWriter out = response.getWriter();
       out.println("{ \"message\": \"The board is green!\" }");
-      out.println("{\"stand\":\" dev \"}");
+      out.println("{ \"stand\":\" dev \"}");
    }
 
 }
