@@ -46,4 +46,4 @@ jobs:
         password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
     -  
       name: Build the Docker image
-      run: docker build . --file Dockerfile --tag cat_or_dog:$(date + %s)
+      run: docker build . --file Dockerfile --tag cat_or_dog:$(date +%Y%m%d%s)

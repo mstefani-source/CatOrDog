@@ -1,4 +1,4 @@
 FROM ubuntu:latest
 COPY . /app
 RUN make /app
-CMD 
+CMD ls -all
