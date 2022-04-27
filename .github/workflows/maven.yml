@@ -10,7 +10,7 @@ on:
     branches: [ develop/deploy ]
 
 jobs:
-  build:
+  build_artefact:
 
     runs-on: ubuntu-latest
 
@@ -27,7 +27,17 @@ jobs:
         cache: maven
     - 
       name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: |
+        mvn -B package --file pom.xml
+        echo '::set-output name=SELECTED_COLOR::green'
+
+  build_docker_image:
+    runs-on: ubuntu-latest
+
+    steps:
+    - shell: bash
+      run: |
+        ls -all
     - 
       name: Login to Docker Hub
       uses: docker/login-action@v1
@@ -36,4 +46,4 @@ jobs:
         password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
     -  
       name: Build the Docker image
-      run: docker build . --file Dockerfile --tag Cat_or_Dog:$(date +%s)
+      run: docker build . --file Dockerfile --tag cat_or_dog:$(date + %s)
