@@ -1,4 +1,4 @@
-FROM ubuntu-latest
+FROM ubuntu:latest
 
 LABEL author="ivanow.victor@live.ru"
 
