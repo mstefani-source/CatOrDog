@@ -7,7 +7,7 @@ on:
   push:
     branches:
       - develop/deploy
-      - 'feature/**'
+      - feature
 jobs:
   build_artefact:
 
