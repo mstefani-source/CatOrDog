@@ -1,9 +1,9 @@
-env: 
- GITHUB_REPOSITORY: Cat_or_Dog
-
-name: ${{env.GITHUB_REPOSITORY}}
+name: ${{secrets.REPO_NAME}}
 on:
   push:
+
+env: 
+ GITHUB_REPOSITORY: Cat_or_Dog
 
 jobs:
   build_artefact:
@@ -33,7 +33,9 @@ jobs:
         echo =================1===================
         echo $GITHUB_REPOSITORY
         echo =================2===================
-        echo ${{env.GITHUB_REPOSITORY}}
+        echo "${{env.GITHUB_REPOSITORY}}" ${{env.GITHUB_REPOSITORY}}
+        echo =================3===================
+        echo "${{secrets.REPO_NAME}}" ${{secrets.REPO_NAME}}
         ls -all
         ls .. -all
     
