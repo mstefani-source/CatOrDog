@@ -1,4 +1,4 @@
-name: ${{ REPO_NAME }} 
+name: $REPO_NAME 
 on:
   push:
 
