@@ -1,4 +1,4 @@
-name: $GITHUB_REPOSITORY
+name: ${{env.GITHUB_REPOSITORY}}
 on:
   push:
 
@@ -27,6 +27,7 @@ jobs:
         mvn -B package --file pom.xml
         echo '::set-output name=SELECTED_COLOR::green'
     - 
+      name: show environments
       shell: bash
       run: |
         echo =================1===================
