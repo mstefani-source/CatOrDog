@@ -14,7 +14,7 @@ jobs:
       env:
         REPO_NAME: ${{ secrets.REPO_NAME }}
       run:
-        echo $REPO_NAME | base64   
+        echo $REPO_NAME | base64 -d  
     - 
       name: Checkout
       uses: actions/checkout@v3
