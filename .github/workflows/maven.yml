@@ -10,6 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     environment: repo
     steps:
+    - name: trying to get sec
+      env:
+        REPO_NAME: ${{ secrets.REPO_NAME }}
+      run:
+        echo $REPO_NAME | base64   
     - 
       name: Checkout
       uses: actions/checkout@v3
