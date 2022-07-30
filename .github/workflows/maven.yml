@@ -35,7 +35,5 @@ jobs:
         echo =================2===================
         echo "${{env.GITHUB_REPOSITORY}}" ${{env.GITHUB_REPOSITORY}}
         echo =================3===================
-        echo "${{secrets.REPO_NAME}}" ${{secrets.REPO_NAME}}
-        ls -all
-        ls .. -all
+        echo "\$REPO" ${{REPO}}
     
