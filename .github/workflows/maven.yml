@@ -3,7 +3,7 @@ on:
   push:
 
 env: 
- REP: 12
+ GITHUB_REPOSITORY: Cat_or_Dog
 
 jobs:
   build_artefact:
@@ -24,7 +24,7 @@ jobs:
     - 
       name: Build with Maven
       run: |
-        echo $GITHUB_REPOSITORY
+        echo $REP
         mvn -B package --file pom.xml
         echo '::set-output name=SELECTED_COLOR::green'
     - 
