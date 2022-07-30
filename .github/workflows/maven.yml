@@ -1,7 +1,5 @@
 on:
   push:
-    tags: 
-    - '*'
 
 jobs:
   build_artefact:
@@ -29,4 +27,8 @@ jobs:
       run: |
         ls -all
         ls .. -all
-
+    
+    - 
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: ${{ github.head_ref }}  
