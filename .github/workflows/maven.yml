@@ -1,4 +1,4 @@
-name: ${{ env.cache-name }} 
+name: ${{ env.GITHUB_WORKSPACE }} 
 on:
   push:
 
