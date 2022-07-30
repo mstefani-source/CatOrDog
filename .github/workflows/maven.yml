@@ -1,4 +1,4 @@
-name: ${{ env.GITHUB_WORKSPACE }} 
+name: ${{ secrets.REPO_NAME }} 
 on:
   push:
 
