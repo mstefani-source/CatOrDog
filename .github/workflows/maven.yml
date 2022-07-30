@@ -1,4 +1,4 @@
-name: ${{secrets.REPO_NAME}}
+name: $REPO
 on:
   push:
 
