@@ -1,9 +1,10 @@
-name: dev/develop
+name: ${{ github.sha }}
 on:
   push:
 
 env: 
- GITHUB_REPOSITORY: Cat_or_Dog
+  GITHUB_REPOSITORY : "Cat_or_Dog"
+  PACKAGE_NAME      : "${{GITHUB_REPOSITORY}}-ver-${{ github.sha }}"
 
 jobs:
   build_artefact:
@@ -37,6 +38,7 @@ jobs:
       run: |
         mvn -B package --file pom.xml
         echo '::set-output name=SELECTED_COLOR::green'
+        ls -all
     - 
       name: show environments
       shell: bash
