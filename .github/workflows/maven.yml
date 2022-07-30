@@ -1,6 +1,9 @@
-name: $REPO_NAME 
+name: $REP
 on:
   push:
+
+env: 
+ REP: 12
 
 jobs:
   build_artefact:
