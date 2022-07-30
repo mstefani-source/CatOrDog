@@ -24,7 +24,7 @@ jobs:
     - 
       name: Build with Maven
       run: |
-        echo $REP
+        echo $GITHUB_REPOSITORY
         mvn -B package --file pom.xml
         echo '::set-output name=SELECTED_COLOR::green'
     - 
