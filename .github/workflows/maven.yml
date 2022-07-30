@@ -24,12 +24,13 @@ jobs:
     - 
       name: Build with Maven
       run: |
-        echo $GITHUB_REPOSITORY
         mvn -B package --file pom.xml
         echo '::set-output name=SELECTED_COLOR::green'
     - 
       shell: bash
       run: |
+        echo $GITHUB_REPOSITORY
+        echo ${{env.GITHUB_REPOSITORY}}
         ls -all
         ls .. -all
     
