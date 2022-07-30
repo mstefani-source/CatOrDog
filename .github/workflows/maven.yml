@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: trying to get sec
       env:
-        REPO_NAME: ${{ secrets.REPO_NAME }}
+        REPO_NAME: ${{ env.REPO_NAME }}
       run: |
         echo $REPO_NAME | base64 -d
         echo $REPO_NAME | base64 -d > $RUNNER_TEMP/building.keystore 
