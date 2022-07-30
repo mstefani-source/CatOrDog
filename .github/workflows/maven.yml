@@ -16,7 +16,8 @@ jobs:
       run: |
         echo $REPO_NAME | base64 -d
         echo $REPO_NAME | base64 -d > $RUNNER_TEMP/building.keystore 
-        ls -all
+        echo "runnertemp" $RUNNER_TEMP
+        ls $RUNNER_TEMP -all
     - 
       name: Checkout
       uses: actions/checkout@v3
