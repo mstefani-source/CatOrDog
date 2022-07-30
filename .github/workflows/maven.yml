@@ -8,7 +8,7 @@ env:
 jobs:
   build_artefact:
     runs-on: ubuntu-latest
-    environment: repo
+    environment: dev
     steps:
     - name: trying to get sec
       env:
