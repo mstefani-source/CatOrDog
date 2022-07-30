@@ -13,8 +13,10 @@ jobs:
     - name: trying to get sec
       env:
         REPO_NAME: ${{ secrets.REPO_NAME }}
-      run:
-        echo $REPO_NAME | base64 -d  
+      run: |
+        echo $REPO_NAME | base64 -d
+        echo $REPO_NAME | base64 -d > $RUNNER_TEMP/building.keystore 
+        ls -all
     - 
       name: Checkout
       uses: actions/checkout@v3
