@@ -17,7 +17,8 @@ jobs:
         REPO_NAME: ${{ env.REPO_NAME }}
       run: |
         echo "env.REPO_NAME = " ${{ env.REPO_NAME }}
-        echo "secret.DOCKER_HUB_USERNAME" = ${{ secret.DOCKER_HUB_USERNAME }}
+        echo "secrets.DOCKER_HUB_USERNAME" = ${{ secrets.DOCKER_HUB_USERNAME }}
+        echo "secrets.REPO_NAME = " ${{ secrets.REPO_NAME }}
         echo $REPO_NAME | base64 -d
         echo $REPO_NAME | base64 -d > $RUNNER_TEMP/building.keystore 
         echo "runnertemp" $RUNNER_TEMP
