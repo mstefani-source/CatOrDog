@@ -35,5 +35,4 @@ jobs:
         echo =================2===================
         echo "${{env.GITHUB_REPOSITORY}}" ${{env.GITHUB_REPOSITORY}}
         echo =================3===================
-        echo "\$REPO" ${{REPO}}
     
