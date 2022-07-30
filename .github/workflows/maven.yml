@@ -1,10 +1,10 @@
-name: ${{ github.sha }}
+name: develop
 on:
   push:
 
 env: 
   GITHUB_REPOSITORY : "Cat_or_Dog"
-  PACKAGE_NAME      : "${{GITHUB_REPOSITORY}}-ver-${{ github.sha }}"
+  PACKAGE_NAME      : "cat-or-dog-ver-${{ github.sha }}"
 
 jobs:
   build_artefact:
