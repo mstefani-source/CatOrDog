@@ -1,6 +1,7 @@
 on:
   push:
-    tag: '*'
+    tags: 
+    - '*'
 
 jobs:
   build_artefact:
