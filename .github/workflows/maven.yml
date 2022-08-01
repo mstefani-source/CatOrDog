@@ -18,7 +18,6 @@ jobs:
       run: |
         echo "secrets.COURSE_SCRIPTS = " ${{ secrets.COURSE_SCRIPTS }}
         echo "\$COURSE_SCRIPTS = " $COURSE_SCRIPTS
-        echo $COURSE_SCRIPTS | base64 -d
         echo =====================================
         echo ${{ secrets.COURSE_SCRIPTS }} | base64 -d
 #        echo $COURSE_SCRIPTS | base64 -d > $RUNNER_TEMP/building.keystore 
