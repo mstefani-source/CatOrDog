@@ -12,8 +12,7 @@ jobs:
     environment: 
       name: dev
     steps:
-    - 
-#      name: trying to get sec
+#   -  name: trying to get sec
 #      env:
 #        COURSE_SCRIPTS: ${{secrets.COURSE_SCRIPTS}}
 #      run: |
