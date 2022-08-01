@@ -15,13 +15,12 @@ jobs:
     - 
       name: trying to get sec
       env:
-        COURSE_SCRIPTS: ${{ secrets.COURSE_SCRIPTS }}
+        COURSE_SCRIPTS: ${{secrets.COURSE_SCRIPTS}}
       run: |
-        echo "env.COURSE_SCRIPTS = " ${{ env.COURSE_SCRIPTS }}
         echo "secrets.COURSE_SCRIPTS" = ${{ secrets.COURSE_SCRIPTS }}
-        echo "secrets.COURSE_SCRIPTS = " ${{ secrets.COURSE_SCRIPTS }}
-        echo $REPO_NAME | base64 -d
-        echo $REPO_NAME | base64 -d > $RUNNER_TEMP/building.keystore 
+        echo "secrets.COURSE_SCRIPTS = $COURSE_SCRIPTS
+        echo $COURSE_SCRIPTS | base64 -d
+        echo $COURSE_SCRIPTS | base64 -d > $RUNNER_TEMP/building.keystore 
         echo "runnertemp" $RUNNER_TEMP
         cd $RUNNER_TEMP
         ls -all
@@ -29,13 +28,15 @@ jobs:
         
     - name: cURL
       uses: indiesdev/curl@v1.1
+      env: 
+        COURSE_SCRIPTS: ${{secrets.COURSE_SCRIPTS}}
       with:
         url: https://api.github.com/repos/mstefani-source/course_scripts/dispatches
         method: "POST"
         accept: 200
         headers: '{ Accept: application/vnd.github.everest-preview+json }'
-        bearer-token: ${{ secrets.COURSE_SCRIPTS }}
-        body: '{"event_type": "pingping", "client_payload": {"foo": "bar"}}'
+        bearer-token: $COURSE_SCRIPTS
+        body: '{"event_type": "CatOrDog_app", "client_payload": {"foo": "bar"}}'
 
 #      with:
 #        args: "-X POST https://api.github.com/repos/mstefani-source/course_scripts/dispatches" -H "Authorization: token ${{ secrets.REPO_NAME }}" -H 'Accept: application/vnd.github.everest-preview+json' -d '{"event_type": "pingping", "client_payload": {"foo": "bar"}}'
