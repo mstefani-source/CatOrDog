@@ -7,7 +7,7 @@ env:
   PACKAGE_NAME      : "cat-or-dog-ver-${{ github.sha }}"
 
 jobs:
-  run_CatOrDog:
+  CatOrDog:
     runs-on: ubuntu-latest
     environment: 
       name: dev
