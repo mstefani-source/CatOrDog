@@ -1,7 +1,9 @@
 name: develop
 on:
   workflow_dispatch:
-
+    types:
+      - hook  
+    
 env: 
   GITHUB_REPOSITORY : "Cat_or_Dog"
   PACKAGE_NAME      : "cat-or-dog-ver-${{ github.sha }}"
