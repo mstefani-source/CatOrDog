@@ -1,8 +1,6 @@
 name: develop
 on:
-  repository_dispatch:
-    types:
-      - Cat:
+  push:
     
 env: 
   GITHUB_REPOSITORY : "Cat_or_Dog"
