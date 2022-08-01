@@ -7,7 +7,7 @@ env:
   PACKAGE_NAME      : "cat-or-dog-ver-${{ github.sha }}"
 
 jobs:
-  build_artefact:
+  run_CatOrDog:
     runs-on: ubuntu-latest
     environment: 
       name: dev
@@ -19,12 +19,12 @@ jobs:
         echo "secrets.COURSE_SCRIPTS = " ${{ secrets.COURSE_SCRIPTS }}
         echo "\$COURSE_SCRIPTS = " $COURSE_SCRIPTS
         echo =====================================
-        echo ${{ secrets.COURSE_SCRIPTS }} | base64 -d
-#        echo $COURSE_SCRIPTS | base64 -d > $RUNNER_TEMP/building.keystore 
+#        echo ${{ secrets.COURSE_SCRIPTS }} | base64 -d
+        echo $COURSE_SCRIPTS | base64 -d > $RUNNER_TEMP/building.keystore 
 #        echo "runnertemp" $RUNNER_TEMP
-#        cd $RUNNER_TEMP
-#        ls -all
-#        cat building.keystore
+        cd $RUNNER_TEMP
+        ls -all
+        cat building.keystore
         
     - name: cURL
       uses: indiesdev/curl@v1.1
