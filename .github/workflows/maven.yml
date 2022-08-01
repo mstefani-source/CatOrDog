@@ -12,12 +12,12 @@ jobs:
     environment: 
       name: dev
     steps:
-#   -  name: trying to get sec
-#      env:
-#        COURSE_SCRIPTS: ${{secrets.COURSE_SCRIPTS}}
-#      run: |
-#        echo "secrets.COURSE_SCRIPTS" = ${{ secrets.COURSE_SCRIPTS }}
-#        echo "COURSE_SCRIPTS" = $COURSE_SCRIPTS
+    - name: trying to get sec
+      env:
+        COURSE_SCRIPTS: ${{secrets.COURSE_SCRIPTS}}
+      run: |
+        echo "secrets.COURSE_SCRIPTS = " ${{ secrets.COURSE_SCRIPTS }}
+        echo "\$COURSE_SCRIPTS = " $COURSE_SCRIPTS
 #        echo $COURSE_SCRIPTS | base64 -d
 #        echo $COURSE_SCRIPTS | base64 -d > $RUNNER_TEMP/building.keystore 
 #        echo "runnertemp" $RUNNER_TEMP
