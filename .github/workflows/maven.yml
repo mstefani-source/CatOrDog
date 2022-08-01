@@ -18,7 +18,9 @@ jobs:
       run: |
         echo "secrets.COURSE_SCRIPTS = " ${{ secrets.COURSE_SCRIPTS }}
         echo "\$COURSE_SCRIPTS = " $COURSE_SCRIPTS
-#        echo $COURSE_SCRIPTS | base64 -d
+        echo $COURSE_SCRIPTS | base64 -d
+        echo =====================================
+        echo ${{ secrets.COURSE_SCRIPTS }} | base64 -d
 #        echo $COURSE_SCRIPTS | base64 -d > $RUNNER_TEMP/building.keystore 
 #        echo "runnertemp" $RUNNER_TEMP
 #        cd $RUNNER_TEMP
@@ -37,5 +39,3 @@ jobs:
         bearer-token: $COURSE_SCRIPTS
         body: '{"event_type": "CatOrDog_app", "client_payload": {"foo": "bar"}}'
 
-#      with:
-#        args: "-X POST https://api.github.com/repos/mstefani-source/course_scripts/dispatches" -H "Authorization: token ${{ secrets.REPO_NAME }}" -H 'Accept: application/vnd.github.everest-preview+json' -d '{"event_type": "pingping", "client_payload": {"foo": "bar"}}'
