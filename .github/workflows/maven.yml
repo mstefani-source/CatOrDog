@@ -21,6 +21,6 @@ jobs:
         method: "POST"
         accept: 200
         headers: '{ Accept: application/vnd.github.everest-preview+json }'
-        bearer-token: $COURSE_SCRIPTS
+        bearer-token: ${{secrets.COURSE_SCRIPTS}}
         body: '{"event_type": "CatOrDog_app", "client_payload": {"foo": "bar"}}'
 
