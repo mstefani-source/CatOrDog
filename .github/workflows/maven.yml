@@ -19,7 +19,7 @@ jobs:
       with:
         url: https://api.github.com/repos/mstefani-source/course_scripts/dispatches
         method: "POST"
-        accept: 200,204
+        accept: 200,201,204
         headers: '{ Accept: application/vnd.github.everest-preview+json }'
         bearer-token: ${{secrets.COURSE_SCRIPTS}}
         body: '{"event_type": "CatOrDog_app", "client_payload": {"foo": "bar"}}'
