@@ -37,7 +37,7 @@ jobs:
         body: '{ "event_type": "CatOrDog_app-${{ steps.vars.outputs.sha_short }}",
                  "client_payload": {
                     "repo": "Cat_or_Dog", 
-                    "package_sha": "${{ github.sha }}",
+                    "package_sha": "{{ github.sha }}",
                     "framework": "maven",
                     "command": "mvn -B package --file pom.xml"
                  }
