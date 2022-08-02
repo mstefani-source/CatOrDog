@@ -12,11 +12,18 @@ jobs:
     environment: 
       name: dev
     steps:
+    - name: Show GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"  
+
     - name: set outputs
       id: vars
       run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+
     - name: Check outputs
       run: echo ${{ steps.vars.outputs.sha_short }}     
+
     - name: cURL
       uses: indiesdev/curl@v1.1
       env: 
