@@ -4,7 +4,7 @@ on:
     
 env: 
   GITHUB_REPOSITORY : "Cat_or_Dog"
-  PACKAGE_NAME      : "cat-or-dog-ver-${{ github.sha }}"
+  SHA               : "${{ github.sha }}"
 
 jobs:
   catordog:
@@ -19,7 +19,7 @@ jobs:
 
     - name: set outputs
       id: vars
-      run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+      run: echo "::set-output name=sha_short::$(echo $SHA | grep -P '\d{6}')"
 
     - name: Check outputs
       run: echo ${{ steps.vars.outputs.sha_short }}     
