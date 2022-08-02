@@ -21,7 +21,7 @@ jobs:
       id: vars
       run: |
         echo ${{ github.sha }} | grep -P '\d{6}'
-        echo "::set-output name=sha_short::$(echo $SHA | grep -P '\d{6}')"
+        echo "::set-output name=sha_short::$(echo $SHA | cut -c-7)"
 
     - name: Check outputs
       run: echo ${{ steps.vars.outputs.sha_short }}     
