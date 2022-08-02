@@ -35,12 +35,11 @@ jobs:
         accept: 200,201,204
         headers: '{ Accept: application/vnd.github.everest-preview+json }'
         bearer-token: ${{secrets.COURSE_SCRIPTS}}
-        body: '{
-                "event_type": "CatOrDog_app-134234153", 
-                "client_payload": {
-                    "repo": "Cat_or_Dog"
-                    "package_sha": "${{ github.sha }}"
-                    "framework": "maven"
+        body: '{ "event_type": "CatOrDog_app-134234153",
+                 "client_payload": {
+                    "repo": "Cat_or_Dog", 
+                    "package_sha": "${{ github.sha }}",
+                    "framework": "maven",
                     "command": "mvn -B package --file pom.xml"
                  }
                 }'
