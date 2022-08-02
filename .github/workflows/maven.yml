@@ -19,7 +19,8 @@ jobs:
 
     - name: set outputs
       id: vars
-      run: echo "::set-output name=sha_short::$(echo $SHA | grep -P '\d{6}')"
+      run: 
+        echo "::set-output name=sha_short::$(echo $SHA | grep -P '\d{6}')"
 
     - name: Check outputs
       run: echo ${{ steps.vars.outputs.sha_short }}     
@@ -35,7 +36,7 @@ jobs:
         headers: '{ Accept: application/vnd.github.everest-preview+json }'
         bearer-token: ${{secrets.COURSE_SCRIPTS}}
         body: '{
-                "event_type": "CatOrDog_app-${{ steps.vars.outputs.sha_short }}", 
+                "event_type": "CatOrDog_app-134234153", 
                 "client_payload": {
                     "repo": "Cat_or_Dog"
                     "package_sha": "${{ github.sha }}"
