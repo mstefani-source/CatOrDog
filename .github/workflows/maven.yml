@@ -22,5 +22,10 @@ jobs:
         accept: 200,201,204
         headers: '{ Accept: application/vnd.github.everest-preview+json }'
         bearer-token: ${{secrets.COURSE_SCRIPTS}}
-        body: '{"event_type": "CatOrDog_app", "client_payload": {"foo": "bar"}}'
+        body: '{
+                "event_type": "CatOrDog_app", 
+                "client_payload": {
+                    "package_sha": "${{ github.sha }}"
+                 }
+                }'
 
