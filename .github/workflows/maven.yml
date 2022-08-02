@@ -19,7 +19,8 @@ jobs:
 
     - name: set outputs
       id: vars
-      run: 
+      run: |
+        echo ${{ github.sha }} | grep -P '\d{6}'
         echo "::set-output name=sha_short::$(echo $SHA | grep -P '\d{6}')"
 
     - name: Check outputs
